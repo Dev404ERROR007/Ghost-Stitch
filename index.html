@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Stitch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="homepage">
+    <div class="site-shell">
+        <header class="site-header glass">
+            <a class="brand" href="index.html">
+                <span class="brand-mark"></span>
+                <span>
+                    <strong>Ghost Stitch</strong>
+                    <small>Custom anime streetwear studio</small>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="customizer.html">Customizer</a>
+                <a href="voting_board.html">Voting Board</a>
+                <a href="customer/account.php" data-account-link>Account</a>
+                <a href="admin/secure-control/dashboard.php" data-control-link>Control</a>
+                <a class="button small" href="login.php" data-login-link>Login</a>
+                <a href="auth/logout.php" data-logout-link hidden>Logout</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-panel reveal" data-section="hero">
+                <div class="hero-copy glass">
+                    <span class="eyebrow">Premium custom clothing</span>
+                    <h1>Luxury hoodies, t-shirts, and caps built for premium self-expression.</h1>
+                    <div class="hero-actions">
+                        <a class="button" href="customizer.html">Start Designing</a>
+                        <a class="button button-ghost" href="voting_board.html">Explore Votes</a>
+                    </div>
+                </div>
+                <div class="hero-visual glass" id="heroVisual">
+                    <div class="orb orb-one"></div>
+                    <div class="orb orb-two"></div>
+                    <div class="stat-card">
+                        <strong>AI style engine</strong>
+                        <span>Live outfit, color, trend, and related-design recommendations.</span>
+                    </div>
+                    <div class="stat-grid">
+                        <article><strong>RBAC</strong><span>Secure roles for admin, employee, customer</span></article>
+                        <article><strong>AJAX</strong><span>Voting, saves, updates, and private customizer controls</span></article>
+                        <article><strong>250</strong><span>Votes required for featured review trigger</span></article>
+                        <article><strong>Mobile</strong><span>Fast responsive dark storefront</span></article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="drop-banner glass reveal" data-section="drop">
+                <div>
+                    <span class="eyebrow">Limited drops system</span>
+                    <h2>Midnight Atelier capsule expires automatically when the timer hits zero.</h2>
+                    <p>Countdown components are shared across the homepage and product sections for consistent drop timing.</p>
+                </div>
+                <div class="countdown" data-countdown>
+                    <div><strong data-unit="days">00</strong><span>Days</span></div>
+                    <div><strong data-unit="hours">00</strong><span>Hours</span></div>
+                    <div><strong data-unit="minutes">00</strong><span>Minutes</span></div>
+                    <div><strong data-unit="seconds">00</strong><span>Seconds</span></div>
+                </div>
+            </section>
+
+            <section class="section reveal" data-section="products">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">Standard products</span>
+                        <h2>Admin-managed catalog with editable pricing, stock, images, and descriptions.</h2>
+                    </div>
+                </div>
+                <div class="product-grid" id="homepageProducts"></div>
+            </section>
+
+            <section class="section split-section reveal" data-section="customizer">
+                <div class="glass panel-copy">
+                    <span class="eyebrow">Custom product system</span>
+                    <h2>Customer-built products stay separate from standard inventory and can be saved, reordered, or sent to voting.</h2>
+                    <ul class="feature-list">
+                        <li>Choose hoodie, t-shirt, or cap</li>
+                        <li>Change colors, sizes, text, and uploaded graphics</li>
+                        <li>Preview live and save through AJAX</li>
+                        <li>Keep private or request public voting board approval</li>
+                    </ul>
+                    <a class="button" href="customizer.html">Open Customizer</a>
+                </div>
+                <div class="glass panel-stack">
+                    <div class="mini-card">
+                        <strong>Voting flow</strong>
+                        <span>Popup prompt asks whether the design should be added to the public voting board.</span>
+                    </div>
+                    <div class="mini-card">
+                        <strong>Featured trigger</strong>
+                        <span>Designs that hit the vote target are marked for admin homepage feature review.</span>
+                    </div>
+                    <div class="mini-card">
+                        <strong>Private website customizer</strong>
+                        <span>Staff can drag homepage sections, change colors, and save live.</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section reveal" data-section="voting">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">Community board</span>
+                        <h2>Approved custom concepts currently leading the voting board.</h2>
+                    </div>
+                    <a class="button button-ghost" href="voting_board.html">See all entries</a>
+                </div>
+                <div class="voting-grid" id="homepageVoting"></div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Premium custom hoodies, t-shirts, and caps. Built with modular PHP, AJAX, and MySQL-ready architecture.</p>
+        </footer>
+    </div>
+    <script>window.APP_CONFIG = { prefix: "" };</script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

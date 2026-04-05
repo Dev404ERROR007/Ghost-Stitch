@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizer | Atelier Noir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="customizer-page">
+    <div class="site-shell">
+        <header class="site-header glass">
+            <a class="brand" href="index.html">
+                <span class="brand-mark"></span>
+                <span>
+                    <strong>Atelier Noir</strong>
+                    <small>Custom luxury streetwear studio</small>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="customizer.html">Customizer</a>
+                <a href="voting_board.html">Voting Board</a>
+                <a href="customer/account.php" data-account-link>Account</a>
+                <a href="admin/secure-control/dashboard.php" data-control-link>Control</a>
+                <a class="button small" href="login.php" data-login-link>Login</a>
+                <a href="auth/logout.php" data-logout-link hidden>Logout</a>
+            </nav>
+        </header>
+
+        <main class="section">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Custom design studio</span>
+                    <h1>Build premium hoodies, t-shirts, and caps with instant visual feedback.</h1>
+                </div>
+            </div>
+            <section class="customizer-layout">
+                <form id="designForm" class="glass customizer-form" enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" value="">
+                    <label>
+                        <span>Product type</span>
+                        <select name="product_type" id="productType">
+                            <option value="hoodie">Hoodie</option>
+                            <option value="t-shirt">T-shirt</option>
+                            <option value="cap">Cap</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Color</span>
+                        <input type="color" name="base_color" id="baseColor" value="#121212">
+                    </label>
+                    <label>
+                        <span>Size</span>
+                        <select name="size" id="size">
+                            <option>S</option>
+                            <option selected>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Custom text</span>
+                        <input type="text" name="custom_text" id="customText" value="ATELIER NOIR" maxlength="40">
+                    </label>
+                    <label>
+                        <span>Upload logo / image</span>
+                        <input type="file" name="design_image" id="designImage" accept=".jpg,.jpeg,.png,.webp">
+                    </label>
+                    <div class="button-row">
+                        <button type="button" class="button" data-save-design>Save design</button>
+                        <button type="button" class="button button-ghost" data-submit-vote>Save and ask about voting</button>
+                    </div>
+                    <div id="designMessage" class="notice hidden"></div>
+                </form>
+
+                <section class="glass preview-panel">
+                    <span class="eyebrow">Live preview</span>
+                    <div class="product-preview" id="productPreview">
+                        <div class="product-shape hoodie" id="previewShape"></div>
+                        <div class="overlay-text" id="previewText">ATELIER NOIR</div>
+                        <div class="overlay-logo" id="previewLogo">Logo</div>
+                    </div>
+                    <div class="preview-meta">
+                        <strong>Instant preview engine</strong>
+                        <span>Live state updates are ready for AJAX save, account storage, and voting board review.</span>
+                    </div>
+                </section>
+
+                <aside class="glass suggestions-panel">
+                    <span class="eyebrow">AI suggestions</span>
+                    <h2>Recommendation engine</h2>
+                    <div class="suggestion-group">
+                        <h3>Outfit ideas</h3>
+                        <ul id="suggestionOutfit"></ul>
+                    </div>
+                    <div class="suggestion-group">
+                        <h3>Matching colors</h3>
+                        <ul id="suggestionMatching"></ul>
+                    </div>
+                    <div class="suggestion-group">
+                        <h3>Trending design directions</h3>
+                        <ul id="suggestionTrending"></ul>
+                    </div>
+                    <div class="suggestion-group">
+                        <h3>Related recommendations</h3>
+                        <ul id="suggestionRelated"></ul>
+                    </div>
+                </aside>
+            </section>
+
+            <dialog id="voteDialog" class="vote-dialog glass">
+                <h2>Would you like to add your design to the voting board?</h2>
+                <p>Your design will be saved first and then held for admin approval before it becomes public.</p>
+                <div class="button-row">
+                    <button class="button" data-confirm-submit>Yes, submit it</button>
+                    <button class="button button-ghost" data-close-dialog>No, keep it private</button>
+                </div>
+            </dialog>
+        </main>
+
+        <footer class="site-footer">
+            <p>Premium custom hoodies, t-shirts, and caps. Built with modular PHP, AJAX, and MySQL-ready architecture.</p>
+        </footer>
+    </div>
+    <script>window.APP_CONFIG = { prefix: "" };</script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
